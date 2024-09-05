@@ -29,7 +29,7 @@ export default {
 			})
 			return new Response(JSON.stringify(msg.content[0].text), { headers: corsHeaders })
 		} catch (error) {
-			return new Response(JSON.stringify({ error: error }), { status: 500, headers: corsHeaders })
+			return new Response(JSON.stringify({ error: error.error.error.message }), { status: 500, headers: corsHeaders })
 		}
 	},
 }
